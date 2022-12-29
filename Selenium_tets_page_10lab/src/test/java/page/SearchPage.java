@@ -91,7 +91,7 @@ public class SearchPage {
 
 
     public boolean isSortedByPrice() {
-        var sortType = driver.findElement(By.xpath("//*[@id=\":2\"]/div/div[1]/div/div/div[3]/aside/div[3]/div/div/div[3]/div/div[2]/div/div[1]/p")).getText();
+        String sortType = driver.findElement(By.xpath("//*[@id=\":2\"]/div/div[1]/div/div/div[3]/aside/div[3]/div/div/div[3]/div/div[2]/div/div[1]/p")).getText();
         boolean results = sortType.equals("Сначала дешевые");
         return results;
     }
