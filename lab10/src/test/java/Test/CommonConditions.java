@@ -1,23 +1,26 @@
 package Test;
 
-import driver.DriverSingleton;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import util.TestListener;
+import webDriver.DriverSingleton;
 
-
+@Listeners({TestListener.class})
 public class CommonConditions {
 
-    protected WebDriver webDriver;
+    protected WebDriver driver;
 
     @BeforeMethod()
     public void setUp()
     {
-        webDriver = DriverSingleton.getDriver();
+        driver = DriverSingleton.getDriver();
+        driver.manage().window().maximize();
     }
 
-    @AfterMethod()
+    @AfterMethod(alwaysRun = true)
     public  void stopBrowser()
     {
         DriverSingleton.closeDriver();
