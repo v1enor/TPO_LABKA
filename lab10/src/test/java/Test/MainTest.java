@@ -20,7 +20,7 @@ public class MainTest extends CommonConditions{
     private String LANGUAGE = "testdata.hotel.languege";
     private User TESTUSER = UserCreator.UserCreateDef();
 
-    
+
     @Test(description = "TCH1")
     public void TETSaS()
     {
